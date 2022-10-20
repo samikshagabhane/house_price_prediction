@@ -6,10 +6,10 @@ from sklearn.linear_model import LinearRegression
 import os
 
 
-car_data = pd.read_csv(r'./data/train.csv')
+house_data = pd.read_csv(r'./data/train.csv')
 
-X_train, X_test, y_train, y_test = train_test_split(car_data.drop(['MedHouseVal'],axis=1), 
-                                                    car_data['MedHouseVal'], test_size=0.10, 
+X_train, X_test, y_train, y_test = train_test_split(house_data.drop(['MedHouseVal'],axis=1), 
+                                                    house_data['MedHouseVal'], test_size=0.10, 
                                                     random_state=101)
 
 
