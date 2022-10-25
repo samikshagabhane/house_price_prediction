@@ -1,9 +1,10 @@
 #import required libraries
 import pandas as pd
 from sklearn.model_selection import train_test_split
-import pickle as pkl
+#import pickle as pkl
 from sklearn.linear_model import LinearRegression
 import os
+from compress_pickle import dump
 
 
 house_data = pd.read_csv(r'./data/train.csv')
@@ -20,7 +21,7 @@ model.fit(X_train, y_train)
 
 print("creating pkl file")
 print(os.getcwd())
-pkl.dump(model,open('./model.pkl','wb'),compression="lzma",set_default_extension=False)
+dump(model,'./model.pkl',compression="lzma",set_default_extension=False)
 
 pred = model.predict(X_test)
 
