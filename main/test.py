@@ -20,7 +20,7 @@ model.fit(X_train, y_train)
 
 print("creating pkl file")
 print(os.getcwd())
-pkl.dump(model,open('./model.pkl','wb'))
+pkl.dump(model,open('./model.pkl','wb'),compression="lzma",set_default_extension=False)
 
 pred = model.predict(X_test)
 
