@@ -7,7 +7,7 @@ import os
 from compress_pickle import dump
 
 
-house_data = pd.read_csv(r'./data/train.csv')
+house_data = pd.read_csv(r'House_Price.csv')
 
 X_train, X_test, y_train, y_test = train_test_split(house_data.drop(['MedHouseVal'],axis=1), 
                                                     house_data['MedHouseVal'], test_size=0.10, 
